@@ -13,7 +13,7 @@ func TestTokenize(t *testing.T) {
 		text     string
 		expected []string
 	}{
-		{"Who's on first?", []string{"who", "s", "on", "first"}},
+		{"Who's on first?", []string{"who", "on", "first"}},
 		{"", []string(nil)},
 	}
 

@@ -12,5 +12,5 @@ func ExampleTokenize() {
 	fmt.Println(tokens)
 
 	// Output:
-	// [what s up doc]
+	// [what up doc]
 }
