@@ -49,3 +49,17 @@ func TestQuick(t *testing.T) {
 
 	require.NoError(quick.Check(fn, nil))
 }
+
+var tokBenchText = `
+Software engineering is what happens to programming when you add time and other programmers.
+    - Russ Cox
+`
+
+func BenchmarkTokenize(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		toks := Tokenize(tokBenchText)
+		if len(toks) != 16 {
+			b.Fatal(toks)
+		}
+	}
+}

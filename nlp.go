@@ -14,7 +14,8 @@ var (
 // Tokenize returns a slice of tokens found in text
 func Tokenize(text string) []string {
 	words := wordRe.FindAllString(text, -1)
-	var tokens []string
+	// var tokens []string
+	tokens := make([]string, 0, 20)
 	for _, w := range words {
 		// TODO: stem
 		token := stemmer.Stem(strings.ToLower(w))
