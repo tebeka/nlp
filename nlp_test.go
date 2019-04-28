@@ -14,7 +14,7 @@ func TestTokenize(t *testing.T) {
 		expected []string
 	}{
 		{"Who's on first?", []string{"who", "on", "first"}},
-		{"", []string(nil)},
+		{"", []string{}},
 	}
 
 	for _, tc := range testCases {
