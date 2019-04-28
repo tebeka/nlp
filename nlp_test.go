@@ -1,8 +1,10 @@
 package nlp
 
 import (
-	"reflect"
+	//	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
 func TestTokenize(t *testing.T) {
@@ -20,11 +22,15 @@ func TestTokenize(t *testing.T) {
 			name = "<empty>"
 		}
 		t.Run(name, func(t *testing.T) {
+			require := require.New(t)
 			out := Tokenize(tc.text)
+			require.Equal(tc.expected, out, "tokenize")
 			// if expected != out { // can't compare slices
-			if !reflect.DeepEqual(tc.expected, out) {
-				t.Fatalf("%#v != %#v", tc.expected, out)
-			}
+			/*
+				if !reflect.DeepEqual(tc.expected, out) {
+					t.Fatalf("%#v != %#v", tc.expected, out)
+				}
+			*/
 		})
 	}
 }
