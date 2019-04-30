@@ -7,4 +7,5 @@ build-docker:
 test:
 	go test -v ./...
 
-benchmark: go test -bench . -run '^$'
+benchmark:
+	go test -bench . -run '^$$' -cpuprofile=cpu.prof
